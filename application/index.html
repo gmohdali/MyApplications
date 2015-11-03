@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<div ng-app="myApp1">
+<!--$root scope -->
+<input type="text" ng-model="fname" >
+<input type="text" ng-model="sname" >
+<br>
+Full name: {{fname + "" + sname}}
+	
+    
+
+
+<!-- controller start here ($scope 1)    -->
+<br><br>
+<h1>$scope 01</h1>;  
+<div ng-controller="detail1sCtrl">
+Fname     <input type="text" ng-model="fname1" >
+Fname     <input type="text" ng-model="sname1" >
+<br>
+sc01:full name: {{fname1 + "" + sname1}};
+</div>    <!-- end of controler scope 01 app --> 
+
+
+
+
+<!-- ontroller2 $scope2(child2) start here     -->
+<br><br>
+<h1>$scope 02</h1>;  
+<div ng-controller="details2Ctrl">
+sc02: Fname     <input type="text" ng-model="fname1" >
+sc02: Sname<input type="text" ng-model="sname1" >
+<br>
+sc02: Full name: {{fname1 + "" + sname1}};
+<br>
+<form ng-submit="process()">        
+<input type="submit" value="pressInput1">
+<br>
+</form>
+</div>
+<!-- ontroller2 $scope2 end here     -->
+
+
+
+<br><br>
+<h1>$scope 03 using this as ref to obj</h1>;  
+<div ng-controller="details3Ctrl as dtls">
+sc03:  city name:     {{city}}
+</br>
+sc03:state name:    {{state}}
+<br>
+<p>  using this keyword</p>
+</br>
+city name using this:     {{dtls.city}}
+</br>
+state name using this:    {{dtls.state}}
+</div>
+<!-- end of $scope3 end here     -->
+
+</div>   <!-- end of root scope app-->
+ 
+
+<script type="text/javascript" src="../js/angular.js"></script>
+<script type="text/javascript" src="../js/app.js"></script>
+
+</body>
+</html>
